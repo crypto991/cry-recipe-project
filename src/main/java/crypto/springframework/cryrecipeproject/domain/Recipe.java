@@ -30,6 +30,14 @@ public class Recipe {
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
 
+    public Set<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(Set<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+
     public Long getId() {
         return id;
     }
@@ -117,4 +125,5 @@ public class Recipe {
     public void setImage(Byte[] image) {
         this.image = image;
     }
+
 }
