@@ -16,7 +16,6 @@ public class Notes {
     @Lob
     private String recipeNotes;
 
-
     public Long getId() {
         return id;
     }
@@ -40,5 +39,4 @@ public class Notes {
     public void setRecipeNotes(String recipeNotes) {
         this.recipeNotes = recipeNotes;
     }
-
 }
