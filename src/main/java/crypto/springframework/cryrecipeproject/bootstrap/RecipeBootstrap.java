@@ -211,7 +211,49 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         tacosRecipe.getCategories().add(americanCategory);
         tacosRecipe.getCategories().add(mexicanCategory);
 
+        tacosRecipe.setUrl("http://www.recipes.com/recipes/tacos");
+        tacosRecipe.setServings(2);
+        tacosRecipe.setSource("Tacos Recipes");
+
+
         recipes.add(tacosRecipe);
+
+        Recipe panCakes = new Recipe();
+        panCakes.setDescription("Pancakes");
+        panCakes.setPrepTime(15);
+        panCakes.setCookTime(15);
+        panCakes.setDifficulty(Difficulty.EASY);
+        panCakes.setDirections("In a large bowl, sift together the flour, baking powder, salt and sugar. " +
+                "Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.\n" +
+                "Heat a lightly oiled griddle or frying pan over medium high heat. " +
+                "Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. " +
+                "Brown on both sides and serve hot.");
+        
+
+        Notes panCakeNotes = new Notes();
+
+        panCakeNotes.setRecipeNotes("some shit about pancakes");
+
+        panCakes.setNotes(panCakeNotes);
+
+        panCakes.addIngredient(new Ingredient("baking powder", new BigDecimal(3.5), teaSpoonUom, panCakes ));
+        panCakes.addIngredient(new Ingredient("all-purpose powder" , new BigDecimal(1.5), cupsUom, panCakes));
+        panCakes.addIngredient(new Ingredient("salt", new BigDecimal(1), teaSpoonUom, panCakes));
+        panCakes.addIngredient(new Ingredient("white sugar", new BigDecimal(1), tableSpoonUom, panCakes));
+        panCakes.addIngredient(new Ingredient("egg", new BigDecimal(1), eachUom, panCakes));
+        panCakes.addIngredient(new Ingredient("butter, melted", new BigDecimal(3), tableSpoonUom, panCakes));
+        panCakes.addIngredient(new Ingredient("milk", new BigDecimal(1.25), cupsUom, panCakes));
+
+        panCakes.getCategories().add(americanCategory);
+
+        panCakes.setUrl("http://www.recipes.com/recipes/pancakes");
+        panCakes.setServings(4);
+        panCakes.setSource("Pancakes Recipes");
+
+
+        recipes.add(panCakes);
+
+
         return recipes;
     }
 
