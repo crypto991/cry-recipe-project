@@ -53,8 +53,8 @@
                                 <td><a href="#">Update</a></td>
                                 <td><a href="#">Delete</a></td>
                             </tr>
+                            <!--/*@thymesVar id="recipe" type="crypto.springframework.cryrecipeproject.domain.Ingredient"*/-->
                             <tr th:each="ingredient : ${recipe.ingredients}">
-                                <!--/*@thymesVar id="recipe" type="crypto.springframework.cryrecipeproject.domain.Ingredient"*/-->
                                 <td th:text="${ingredient.id}">123</td>
                                 <td th:text="${ingredient.amount} + ' ' + ${ingredient.uom.getDescription()} +
                                 ' ' + ${ingredient.description}">
