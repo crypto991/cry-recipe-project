@@ -64,7 +64,14 @@
                                 </div>
                                 <div class="col-md-3 form-group">
                                     <label>Difficulty:</label>
-                                    <select class="form-control">
+                                    <!--/*@thymesVar id="recipe" type="crypto.springframework.cryrecipeproject.domain.Difficulty"*/-->
+                                    <select class="form-control" th:field="*{difficulty}">
+                                        <option th:each="difficultyValue : ${T(crypto.springframework.cryrecipeproject.domain.Difficulty).values()}"
+                                                th:value="${difficultyValue.name()}"
+                                                th:text="${difficultyValue.name()}"
+                                                >val</option>
+                                    </select>
+                                    <select class="form-ccontrol" th:remove="all">
                                         <option>Easy</option>
                                         <option>Medium</option>
                                         <option>Hard</option>

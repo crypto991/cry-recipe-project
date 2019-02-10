@@ -4,6 +4,7 @@ import crypto.springframework.cryrecipeproject.commands.RecipeCommand;
 import crypto.springframework.cryrecipeproject.converters.RecipeCommandToRecipe;
 import crypto.springframework.cryrecipeproject.converters.RecipeToRecipeCommand;
 import crypto.springframework.cryrecipeproject.domain.Recipe;
+import crypto.springframework.cryrecipeproject.exceptions.NotFoundException;
 import crypto.springframework.cryrecipeproject.repositories.RecipeRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -43,7 +44,8 @@ public class RecipeServiceImpl implements RecipeService {
             Optional<Recipe> recipeOptional = recipeRepository.findById(id);
 
             if (!recipeOptional.isPresent()) {
-                throw new RuntimeException("Recipe Not Found!");
+//                throw new RuntimeException("Recipe Not Found!");
+                throw new NotFoundException("Recipe Not Found! For ID value: " + id);
             }
 
             return recipeOptional.get();

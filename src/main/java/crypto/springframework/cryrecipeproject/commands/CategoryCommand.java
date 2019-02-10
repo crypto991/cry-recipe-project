@@ -12,4 +12,10 @@ public class CategoryCommand {
 
     private Long id;
     private String description;
+
+
+
 }
+
+
+
